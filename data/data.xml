@@ -1,0 +1,10 @@
+<students>
+    <student name="John">
+        <subject name="Math" score="90" />
+        <subject name="English" score="85" />
+    </student>
+    <student name="Jane">
+        <subject name="Math" score="95" />
+        <subject name="English" score="80" />
+    </student>
+</students>
