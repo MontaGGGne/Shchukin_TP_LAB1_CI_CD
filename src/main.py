@@ -9,18 +9,20 @@ from XMLDataReader import XMLDataReader
 
 
 def get_path_from_arguments(args) -> str:
-    parser = argparse.ArgumentParser(description="Path to datafile")
+    parser = argparse.ArgumentParser()
     group_methods = parser.add_argument_group('method')
-    group_methods.add_argument("-p", dest="path", type=str, required=True,
-                        help="Path to datafile")
+    group_methods.add_argument("-p", dest="path", type=str,
+                               required=True,
+                               help="Path to datafile")
     group_types = parser.add_argument_group('type')
-    group_types.add_argument("-t", dest="type", type=str, required=True,
-                        help="File type")
+    group_types.add_argument("-t", dest="type", type=str,
+                             required=True,
+                             help="File type")
     args_prms = parser.parse_args(args)
     return args_prms
 
+
 def main():
-    print(sys.argv[1:])
     args = get_path_from_arguments(sys.argv[1:])
     if args.type == 'txt':
         reader = TextDataReader()
